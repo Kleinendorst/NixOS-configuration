@@ -116,6 +116,7 @@
     ripgrep
     git
     jq
+    neovim
     librewolf
     vscodium
     subtitleedit
