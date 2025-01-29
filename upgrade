@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+logInfo() { printf '%(%Y-%m-%d %H:%m:%S)T [INFO]: %s\n' -1 "$*" >&2; }
+
+scriptDir=${0%/*}
+logInfo "Changing working directory to script's directory ($scriptDir)..."
+cd "$scriptDir"
+
+logInfo "Updating..."
+logInfo "Rebuilding NixOS (might prompt for sudo pass)..."
+sudo nixos-rebuild switch --flake .
+
+logInfo "Gathering generation info..."
+generationInfo="$(nixos-rebuild list-generations --json | jq -r 'map(select(.current))[] | "generation: " + (.generation | tostring) + ", NixOS: " + .nixosVersion + " (" + .date + ")"')"
+logInfo "Gathered generation info: $generationInfo"
+
+logInfo "Commiting any changes with generation info..."
+git commit -aM "[AUTO] Nix upgrade: $generationInfo"
