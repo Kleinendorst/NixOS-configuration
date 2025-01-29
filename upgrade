@@ -18,3 +18,5 @@ logInfo "Gathered generation info: $generationInfo"
 
 logInfo "Commiting any changes with generation info..."
 git commit -am "[AUTO] Nix upgrade: $generationInfo"
+logInfo "Pushing to git remote..."
+git push
