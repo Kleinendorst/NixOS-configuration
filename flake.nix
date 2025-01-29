@@ -1,6 +1,8 @@
 {
   description = "Nixos config flake";
 
+  # Seems the flake input evaluation here is limited which means duplicating the
+  # NixOS version: https://github.com/NixOS/nix/issues/4945#issuecomment-1141188545.
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
