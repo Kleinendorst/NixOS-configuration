@@ -93,15 +93,6 @@
   };
 
   programs.zsh.enable = true;
-  # users.users.thomas = {
-  #   isNormalUser = true;
-  #   description = "Thomas Kleinendorst";
-  #   extraGroups = [ "networkmanager" "wheel" ];
-  #   packages = with pkgs; [
-  #     kdePackages.kate
-  #   #  thunderbird
-  #   ];
-  # };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

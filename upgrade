@@ -17,4 +17,4 @@ generationInfo="$(nixos-rebuild list-generations --json | jq -r 'map(select(.cur
 logInfo "Gathered generation info: $generationInfo"
 
 logInfo "Commiting any changes with generation info..."
-git commit -aM "[AUTO] Nix upgrade: $generationInfo"
+git commit -am "[AUTO] Nix upgrade: $generationInfo"
