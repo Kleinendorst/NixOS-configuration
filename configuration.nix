@@ -85,6 +85,7 @@ in {
     isNormalUser = true;
     description = "Thomas Kleinendorst";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
   };
 
   home-manager = {
@@ -101,6 +102,13 @@ in {
 
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
+  programs.zsh = {
+    enable = true;
+    ohMyZsh = {
+      enable = true;
+    };
+  };
+  programs.starship.enable = true;
   
   # List packages installed in system profile. To search, run:
   # $ nix search wget

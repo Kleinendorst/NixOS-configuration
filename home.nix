@@ -73,7 +73,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.zsh.enable = true;
-  programs.zsh.oh-my-zsh.enable = true;
 }
