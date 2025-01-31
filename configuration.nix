@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, nixpkgs-unstable, ... }:
 
 {
   imports =
@@ -112,7 +112,7 @@
     neovim
     nurl
     librewolf
-    vscodium
+    inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.vscodium
     subtitleedit
     vlc
     gimp
