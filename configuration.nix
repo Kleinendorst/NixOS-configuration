@@ -110,6 +110,7 @@
     git
     jq
     neovim
+    nurl
     librewolf
     vscodium
     subtitleedit
