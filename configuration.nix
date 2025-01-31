@@ -104,8 +104,9 @@ in {
   programs.vim.defaultEditor = true;
   programs.zsh = {
     enable = true;
+
     ohMyZsh = {
-      enable = true;
+      enable = true; # I have a feeling this isn't working correctly
     };
   };
   programs.starship.enable = true;
