@@ -109,6 +109,7 @@ in {
     ripgrep
     git
     jq
+    tree
     neovim
     nurl
     librewolf
