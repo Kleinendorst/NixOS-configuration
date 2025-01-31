@@ -11,7 +11,6 @@ in {
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      ./main-user.nix
     ];
 
   # Bootloader.
@@ -82,10 +81,12 @@ in {
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  main-user.enable = true;
-  main-user.userName = "thomas";
-  main-user.description = "Thomas Kleinendorst";
+  users.users.thomas = {
+    isNormalUser = true;
+    description = "Thomas Kleinendorst";
+    extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
+  };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
