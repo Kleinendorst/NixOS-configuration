@@ -88,6 +88,8 @@ in {
     shell = pkgs.zsh;
   };
 
+  users.users.root.shell = pkgs.zsh;
+
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
