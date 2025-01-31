@@ -85,7 +85,7 @@ in {
     isNormalUser = true;
     description = "Thomas Kleinendorst";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
+    # shell = pkgs.zsh;
   };
 
   home-manager = {
